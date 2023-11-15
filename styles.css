@@ -1,0 +1,174 @@
+/* styles.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e6e6e6;
+    margin: 0;
+    overflow: hidden;
+}
+
+.container {
+    background: url('header.jpg') no-repeat center center;
+    background-size: cover;
+    height: 100vh;  /* Adjusts to the height of the window */
+    width: 100vw;   /* Adjusts to the width of the window */
+    position: relative;
+    padding: 20px;
+    color: white;
+    box-sizing: border-box; /* So the padding doesn't expand the container size */
+}
+
+h1 {
+    font-size: 48px;
+    position: absolute;
+    top: 5%;  /* Adjusted for relative positioning */
+    left: 5%; /* Adjusted for relative positioning */
+}
+
+button {
+    background: black;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #555;
+}
+
+#regenerate {
+    position: absolute;
+    top: 33%;  /* Adjusted for relative positioning */
+    left: 50%; /* Adjusted for relative positioning */
+    transform: translateX(-50%); /* Centering it horizontally */
+    padding: 16px 24px;  /* Increased size */
+    font-size: 24px;    /* Increased font size for proportionality */
+}
+
+#about {
+    position: absolute;
+    bottom: 5%;  /* Adjusted for relative positioning */
+    right: 5%; /* Adjusted for relative positioning */
+    background: rgba(255, 255, 255, 0.2); /* 20% white transparent fill */
+    border: 2px solid white; /* 2px non-transparent white stroke */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+}
+
+#about:hover {
+    background: rgba(255, 255, 255, 0.4); /* On hover, white fill opacity goes to 40% */
+}
+
+
+#info {
+    position: absolute;
+    bottom: 15%;  /* Adjusted for relative positioning */
+    right: 5%; /* Adjusted for relative positioning */
+    max-width: 300px;
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.container::before {
+    content: ""; /* This is required for the pseudo-element to be generated */
+    position: absolute; /* Absolute positioning so we can layer it accordingly */
+    top: 0; /* Start at the top of the container */
+    left: 0; /* Start from the left side */
+    right: 0; /* Stretch to the right side */
+    height: 40vh; /* 20% of the viewport height */
+    background: linear-gradient(to bottom, black, transparent); /* Gradient from black to transparent */
+    z-index: 0; /* Position it above the background, but below the text */
+}
+
+h1 {
+    font-size: 48px;
+    position: absolute;
+    top: 5%;  /* Adjusted for relative positioning */
+    left: 5%; /* Adjusted for relative positioning */
+    z-index: 1; /* Position the H1 text above the rectangle */
+}
+
+
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 2; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+}
+
+
+.close {
+    position: absolute; /* Absolute position the close button for precise placement */
+    top: 10px; /* Distance from the top of the modal content */
+    right: 20px; /* Distance from the right of the modal content */
+    color: #101010; /* Light grey color which can be adjusted as needed */
+    font-size: 28px; /* Size of the close button */
+    font-weight: bold;
+}
+
+/* Additional styles for the close button to adjust for larger clickable area and visibility */
+.close:hover, .close:focus {
+    color: #505050; /* Lighter shade on hover for better visibility */
+    text-decoration: none;
+    cursor: pointer;
+
+}
+
+.modal-content {
+    position: relative; /* Add this line if not present */
+    background-color: #fefefe;
+    margin: 10% auto; /* 10% from the top and centered */
+    padding: 40px;
+    border-radius: 8px; /* Rounded corners */
+    width: 50%; /* Adjust width as needed */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Subtle shadow for depth */
+    line-height: 1.6; /* Spacing out the line height for better readability */
+    color: #333; /* Dark grey color for text for better readability on white */
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* A more modern font */
+}
+
+.modal-content p {
+    margin-bottom: 15px; /* Spacing between paragraphs */
+    text-align: left; /* Justify the text for a clean look */
+    font-size: 1em; /* Set font size to default em for consistency */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 80%; /* Full width on smaller screens */
+    padding: 20px; /* Less padding on smaller screens */
+    margin-top: 20%; /* More top margin to avoid being too close to the top */
+  }
+}
+
+/* Add this new style for the heading within the modal */
+.modal-content h2 {
+    color: #333;
+    margin-top: 0;
+    font-size: 1.5em; /* Larger font size for the heading */
+    font-weight: bold; /* Adjust the weight of the font as per design */
+    line-height: 1; /* Tighter line-height for heading */
+    margin-bottom: 0px; /* Add some space below the heading */
+}
+
+.modal-content section {
+    margin-bottom: 40px; /* Spacing between sections */
+}
+
+.modal-content h3 {
+    margin-top: 10px; /* Spacing above subheadings if needed */
+    margin-bottom: 0px; /* Spacing below subheadings before text */
+    font-size: 1em; /* Subheading size */
+}

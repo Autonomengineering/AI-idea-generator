@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Idea Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>"Design a <span id="product"></span> that <span id="constraint"></span>"</h1>
+        <button id="regenerate">Regenerate idea</button>
+        <button id="about">About the generator</button>
+        <div id="info" class="hidden">This is an AI-powered idea generator...</div>
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Welcome to the AI Idea Generator!</h2>
+            <section id="introduction">
+                <p>This tool offers a playful way to spark creativity and innovation. By combining a random product with a unique constraint, it challenges you to think outside the box and envision new design possibilities.</p>
+                <p>Click the "Regenerate idea" button to display a new product idea with an associated constraint. Use these prompts to kick-start your AI-related brainstorming session.</p>
+            </section>
+            <section id="usage">
+                <h3>About</h3>
+                <p>The generator was built by an UX-designer, without any front-end experience, only using ChatGPT-4. It was first of all an experiment to explore ChatGPT's capabilities and how a designer can aproach development with only natural language.</p> 
+                <p>ChatGPT generated all HTML, CSS, and JavaScript code (and helped out whenever there was a bug), it generated the background image, the 100 products and 50 constraints, as well as majority of the copy.</p>
+            </section>
+           
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+
+    
+</body>
+
+</html>
