@@ -18,6 +18,15 @@ body {
     box-sizing: border-box; /* So the padding doesn't expand the container size */
 }
 
+
+/* Responsive background image for smaller screens */
+@media screen and (max-width: 768px) {
+    .container {
+        background: url('header-phone.jpg') no-repeat center center;
+        background-size: cover;
+    }
+}
+
 h1 {
     font-size: 48px;
     position: absolute;
@@ -46,6 +55,31 @@ button:hover {
     transform: translateX(-50%); /* Centering it horizontally */
     padding: 16px 24px;  /* Increased size */
     font-size: 24px;    /* Increased font size for proportionality */
+    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.6); /* white glow */
+    transition: box-shadow 0.3s; /* smooth transition for the glow effect */
+}
+
+#regenerate:hover {
+    box-shadow: 0 0 15px 4px rgba(255, 255, 255, 0.8); /* stronger glow on hover */
+}
+
+/* Responsive styles for smaller screens */
+@media screen and (max-width: 768px) {
+    #regenerate {
+        font-size: 24px; /* Smaller font size for mobile */
+        padding: 16px 20px; /* Smaller padding for mobile */
+        top: 30%; /* Adjust position if needed */
+        /* other responsive adjustments */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #regenerate {
+        font-size: 20px; /* Even smaller font size for very small screens */
+        padding: 16px 18px; /* Smaller padding for very small screens */
+        top: 28%; /* Adjust position if needed */
+        /* other responsive adjustments */
+    }
 }
 
 #about {
@@ -171,4 +205,67 @@ h1 {
     margin-top: 10px; /* Spacing above subheadings if needed */
     margin-bottom: 0px; /* Spacing below subheadings before text */
     font-size: 1em; /* Subheading size */
+}
+
+
+
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 24px; /* smaller font size for mobile */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 24px; /* even smaller for very small screens */
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    button {
+        padding: 8px 12px; /* smaller padding for mobile */
+        font-size: 14px; /* smaller font size for mobile */
+    }
+}
+
+
+/* Responsive styles for smaller screens */
+@media screen and (max-width: 480px) {
+    .container {
+        display: flex; /* Enables flexbox */
+        justify-content: center; /* Centers horizontally */
+        align-items: center; /* Centers vertically */
+        height: 100vh; /* Ensure full height of the viewport */
+    }
+
+    #regenerate {
+        position: static; /* Remove absolute positioning */
+        transform: none; /* Remove transform */
+        /* other responsive adjustments */
+    }
+}
+
+
+/* Responsive styles for smaller screens to remove hover effects */
+@media screen and (max-width: 480px) {
+    button:hover {
+        background: black; /* same as the non-hover background */
+        /* other styles (if any) to revert back to the default state */
+    }
+
+    #about:hover {
+        background: rgba(255, 255, 255, 0.2); /* revert to the original background */
+        /* other styles (if any) to revert back to the default state */
+    }
+}
+
+
+#daresay-logo {
+    position: absolute; /* Enable absolute positioning */
+    bottom: 24px; /* Distance from the bottom of the modal-content */
+    right: 36px; /* Distance from the left of the modal-content */
+    width: 100px; /* Adjust the width as needed */
+    height: auto; /* Keep the aspect ratio of the image */
+    z-index: 3; /* Ensure it's above other modal elements */
 }
